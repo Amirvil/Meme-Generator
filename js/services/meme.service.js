@@ -11,6 +11,11 @@ var gMeme = {
         {
             txt: 'I sometimes eat Falafel',
             size: 20,
+            color: 'black'
+        },
+        {
+            txt: 'Wow!',
+            size: 20,
             color: 'red'
         }
     ]
@@ -44,11 +49,11 @@ function setLineColor(color) {
 
 function setFontSize(direction) {
     switch (direction) {
-        case "increase":
+        case 'increase':
             gMeme.lines[0].size += 1
             break;
 
-        case "decrease":
+        case 'decrease':
             gMeme.lines[0].size -= 1
             break;
     }

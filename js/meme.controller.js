@@ -23,19 +23,22 @@ function renderMeme() {
 
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, elImg.naturalWidth, elImg.naturalHeight)
-        drawTxt(txt, size, color)
+        meme.lines.forEach((line, idx) => {
+            let y = (idx === 0) ? 50 : gElCanvas.height - 50
+            drawTxt(line.txt, line.size, line.color, gElCanvas.width / 2, y)
+        })
     }
 }
 
-function drawTxt(txt, size, color) {
+function drawTxt(txt, size, color, x, y) {
     gCtx.lineWidth = 1
     gCtx.strokeStyle = 'black'
     gCtx.fillStyle = color
     gCtx.textAlign = 'center'
     gCtx.font = `${size}px Impact`
 
-    gCtx.fillText(txt, 150, 50)
-    gCtx.strokeText(txt, 150, 50)
+    gCtx.fillText(txt, x, y)
+    gCtx.strokeText(txt, x, y)
 }
 
 function onTxtChange(txt) {
