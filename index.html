@@ -19,7 +19,7 @@
     </section>
 
     <section class="editor-container hidden">
-        <input class="input-txt" type="text" onchange="onTxtChange(this.value)" />
+        <input class="input-txt" type="text" oninput="onTxtChange(this.value)" />
         <input class="input-clr" type="color" onchange="onColorChange(this.value)">
         <button class="btn-increase" onclick="onChangeFontSize(this.className)">Increase Font Size</button>
         <button class="btn-decrease" onclick="onChangeFontSize(this.className)">Decrease Font Size</button>
