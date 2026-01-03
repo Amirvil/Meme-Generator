@@ -14,18 +14,19 @@
         <h1>Meme Generator</h1>
     </header>
 
-    <section class="gallery">
+    <section class="gallery-container">
 
     </section>
 
-    <section class="editor">
-        <input class="input-txt" type="text" onchange="onTxtChange(this.value)"/>
+    <section class="editor-container" style="display: none;">
+        <input class="input-txt" type="text" onchange="onTxtChange(this.value)" />
         <canvas width="450" height="450"></canvas>
 
     </section>
 
     <script src="js/meme.controller.js"></script>
-     <script src="js/services/meme.service.js"></script>
+    <script src="js/services/meme.service.js"></script>
+    <script src="js/gellery.controller.js"></script>
 
 </body>
 
