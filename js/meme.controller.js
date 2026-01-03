@@ -35,3 +35,8 @@ function drawTxt(txt, size, color) {
     gCtx.fillText(txt, 150, 50)
     gCtx.strokeText(txt, 150, 50)
 }
+
+function onTxtChange(txt){
+    setLineTxt(txt)
+    renderMeme()
+}
