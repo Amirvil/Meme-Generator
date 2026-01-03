@@ -6,17 +6,17 @@ var gImgs = [
 ]
 var gMeme = {
     selectedImgId: 1,
-    selectedLineIdx: 0,
+    selectedLineIdx: -1,
     lines: [
         {
             txt: 'I sometimes eat Falafel',
             size: 20,
-            color: 'black'
+            color: '#000000'
         },
         {
             txt: 'Wow!',
             size: 20,
-            color: 'red'
+            color: '#000000'
         }
     ]
 }
@@ -59,11 +59,11 @@ function setFontSize(direction) {
     }
 }
 
-function setNewLine() {
+function setNewLine(color) {
     const newLine = {
         txt: 'This is your new line',
         size: 20,
-        color: 'black'
+        color: color
     }
 
     gMeme.lines.push(newLine)
@@ -74,6 +74,8 @@ function setSwitchLine() {
     gMeme.selectedLineIdx++
 
     if (gMeme.selectedLineIdx >= gMeme.lines.length) {
-        gMeme.selectedLineIdx = 0
+        gMeme.selectedLineIdx = -1
+        const elTxtInput = document.querySelector('.input-txt')
+        elTxtInput.value = ''
     }
 }

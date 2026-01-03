@@ -15,7 +15,6 @@ function onInit() {
 
 function renderMeme() {
     const meme = getMeme()
-    const { txt, size, color } = meme.lines[0]
     const imgUrl = getImgUrlByID(meme.selectedImgId)
     const elImg = new Image()
     elImg.src = imgUrl
@@ -80,7 +79,8 @@ function onChangeFontSize(className) {
 }
 
 function onAddLine() {
-    setNewLine()
+    const elClrInput = document.querySelector('.input-clr')
+    setNewLine(elClrInput.value)
     renderMeme()
 }
 
@@ -92,6 +92,8 @@ function onSwitchLine() {
     const currentLine = meme.lines[meme.selectedLineIdx]
     const elTxtInput = document.querySelector('.input-txt')
     elTxtInput.value = currentLine.txt
+    const elClrInput = document.querySelector('.input-clr')
+    elClrInput.value = currentLine.color
 
 }
 
