@@ -21,6 +21,8 @@
     <section class="editor-container hidden">
         <input class="input-txt" type="text" onchange="onTxtChange(this.value)" />
         <input class="input-clr" type="color" onchange="onColorChange(this.value)">
+        <button class="btn-increase" onclick="onChangeFontSize(this.className)">Increase Font Size</button>
+        <button class="btn-decrease" onclick="onChangeFontSize(this.className)">Decrease Font Size</button>
         <canvas width="450" height="450"></canvas>
         <a href="#" class="btn-download" onclick="onDownloadImg(this)" download="my-img.jpg">Download</a>
     </section>

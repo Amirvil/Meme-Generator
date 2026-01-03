@@ -28,7 +28,7 @@ function renderMeme() {
 }
 
 function drawTxt(txt, size, color) {
-    gCtx.lineWidth = 2
+    gCtx.lineWidth = 1
     gCtx.strokeStyle = 'black'
     gCtx.fillStyle = color
     gCtx.textAlign = 'center'
@@ -38,12 +38,12 @@ function drawTxt(txt, size, color) {
     gCtx.strokeText(txt, 150, 50)
 }
 
-function onTxtChange(txt){
+function onTxtChange(txt) {
     setLineTxt(txt)
     renderMeme()
 }
 
-function onColorChange(color){
+function onColorChange(color) {
     setLineColor(color)
     renderMeme()
 }
@@ -51,4 +51,17 @@ function onColorChange(color){
 function onDownloadImg(elLink) {
     const imgContent = gElCanvas.toDataURL('image/jpeg')
     elLink.href = imgContent
+}
+
+function onChangeFontSize(className) {
+    switch (className) {
+        case "btn-increase":
+            setFontSize("increase")
+            break;
+
+        case "btn-decrease":
+            setFontSize("decrease")
+            break;
+    }
+    renderMeme()
 }

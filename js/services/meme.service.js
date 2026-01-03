@@ -34,10 +34,22 @@ function setLineTxt(txt) {
     gMeme.lines[0].txt = txt
 }
 
-function setImg(imgId){
+function setImg(imgId) {
     gMeme.selectedImgId = imgId
 }
 
-function setLineColor(color){
+function setLineColor(color) {
     gMeme.lines[0].color = color
+}
+
+function setFontSize(direction) {
+    switch (direction) {
+        case "increase":
+            gMeme.lines[0].size += 1
+            break;
+
+        case "decrease":
+            gMeme.lines[0].size -= 1
+            break;
+    }
 }
