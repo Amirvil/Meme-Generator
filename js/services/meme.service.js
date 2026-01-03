@@ -36,7 +36,7 @@ function getImgUrlByID(id) {
 }
 
 function setLineTxt(txt) {
-    gMeme.lines[0].txt = txt
+    gMeme.lines[gMeme.selectedLineIdx].txt = txt
 }
 
 function setImg(imgId) {
@@ -44,17 +44,36 @@ function setImg(imgId) {
 }
 
 function setLineColor(color) {
-    gMeme.lines[0].color = color
+    gMeme.lines[gMeme.selectedLineIdx].color = color
 }
 
 function setFontSize(direction) {
     switch (direction) {
         case 'increase':
-            gMeme.lines[0].size += 1
+            gMeme.lines[gMeme.selectedLineIdx].size += 1
             break;
 
         case 'decrease':
-            gMeme.lines[0].size -= 1
+            gMeme.lines[gMeme.selectedLineIdx].size -= 1
             break;
+    }
+}
+
+function setNewLine() {
+    const newLine = {
+        txt: 'This is your new line',
+        size: 20,
+        color: 'black'
+    }
+
+    gMeme.lines.push(newLine)
+    gMeme.selectedLineIdx = gMeme.lines.length - 1
+}
+
+function setSwitchLine() {
+    gMeme.selectedLineIdx++
+
+    if (gMeme.selectedLineIdx >= gMeme.lines.length) {
+        gMeme.selectedLineIdx = 0
     }
 }

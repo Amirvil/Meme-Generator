@@ -24,8 +24,14 @@ function renderMeme() {
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, elImg.naturalWidth, elImg.naturalHeight)
         meme.lines.forEach((line, idx) => {
-            let y = (idx === 0) ? 50 : gElCanvas.height - 50
-            drawTxt(line.txt, line.size, line.color, gElCanvas.width / 2, y)
+            let x = gElCanvas.width / 2
+            let y
+
+            if (idx === 0) y = 50
+            else if (idx === 1) y = gElCanvas.height - 50
+            else y = gElCanvas.height / 2
+
+            drawTxt(line.txt, line.size, line.color, x, y)
         })
     }
 }
@@ -67,4 +73,19 @@ function onChangeFontSize(className) {
             break;
     }
     renderMeme()
+}
+
+function onAddLine() {
+    setNewLine()
+    renderMeme()
+}
+
+function onSwitchLine(){
+    setSwitchLine()
+    renderMeme()
+
+    const meme = getMeme()
+    const currentLine = meme.lines[meme.selectedLineIdx]
+    const elTxtInput = document.querySelector('.input-txt')
+    elTxtInput.value = currentLine.txt
 }
