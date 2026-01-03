@@ -12,22 +12,26 @@ function onInit() {
 
 
 function renderMeme() {
+    const meme = getMeme()
+    const { txt, size, color } = meme.lines[0]
+    const imgUrl = getImgUrlByID(meme.selectedImgId)
     const elImg = new Image()
-    elImg.src = 'images/2.jpg'
+    elImg.src = imgUrl
+
 
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, elImg.naturalWidth, elImg.naturalHeight)
-        drawTxt()
+        drawTxt(txt, size, color)
     }
 }
 
-function drawTxt() {
+function drawTxt(txt, size, color) {
     gCtx.lineWidth = 2
     gCtx.strokeStyle = 'black'
-    gCtx.fillStyle = 'white'
+    gCtx.fillStyle = color
     gCtx.textAlign = 'center'
-    gCtx.font = '40px Impact'
+    gCtx.font = `${size}px Impact`
 
-    gCtx.fillText("First Meme", 150, 50)
-    gCtx.strokeText("First Meme", 150, 50)
+    gCtx.fillText(txt, 150, 50)
+    gCtx.strokeText(txt, 150, 50)
 }
