@@ -11,12 +11,16 @@ var gMeme = {
         {
             txt: 'I sometimes eat Falafel',
             size: 20,
-            color: '#000000'
+            color: '#000000',
+            pos: { x: 250, y: 50 },
+            width: 0
         },
         {
             txt: 'Wow!',
             size: 20,
-            color: '#000000'
+            color: '#000000',
+            pos: { x: 250, y: 400 },
+            width: 0
         }
     ]
 }
@@ -78,4 +82,18 @@ function setSwitchLine() {
         const elTxtInput = document.querySelector('.input-txt')
         elTxtInput.value = ''
     }
+}
+
+function isLineClicked(clickedPos) {
+    const clickedLineIdx = gMeme.lines.findIndex(line => {
+        return (
+            clickedPos.x >= line.pos.x - line.width / 2 &&
+            clickedPos.x <= line.pos.x + line.width / 2 &&
+            clickedPos.y >= line.pos.y - line.size / 2 &&
+            clickedPos.y <= line.pos.y + line.size / 2
+        )
+    })
+
+    if (clickedLineIdx !== -1) gMeme.selectedLineIdx = clickedLineIdx
+    else gMeme.selectedLineIdx = -1
 }

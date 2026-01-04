@@ -7,6 +7,8 @@ function onInit() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
 
+    addListeners()
+
     renderGallery()
 
     // renderMeme()
@@ -23,19 +25,31 @@ function renderMeme() {
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, elImg.naturalWidth, elImg.naturalHeight)
         meme.lines.forEach((line, idx) => {
-            let x = gElCanvas.width / 2
-            let y
+            const { txt, size, color, pos } = line
+            gCtx.font = `${size}px Impact`
+            line.width = gCtx.measureText(txt).width
 
-            if (idx === 0) y = 50
-            else if (idx === 1) y = gElCanvas.height - 50
-            else y = gElCanvas.height / 2
-
-            drawTxt(line.txt, line.size, line.color, x, y)
+            drawTxt(txt, size, color, pos.x, pos.y)
 
             if (idx === meme.selectedLineIdx) {
-                drawTxtFrame(line.txt, line.size, x, y)
+                drawTxtFrame(txt, size, pos.x, pos.y)
             }
         })
+    }
+}
+
+function renderInputs() {
+    const meme = getMeme()
+    const elTxtInput = document.querySelector('.input-txt')
+    const elClrInput = document.querySelector('.input-clr')
+    if (meme.selectedLineIdx !== -1) {
+        const currentLine = meme.lines[meme.selectedLineIdx]
+        elTxtInput.value = currentLine.txt
+        elClrInput.value = currentLine.color
+    }
+    else {
+        elTxtInput.value = ''
+        elClrInput.value = '#000000'
     }
 }
 
@@ -82,19 +96,13 @@ function onAddLine() {
     const elClrInput = document.querySelector('.input-clr')
     setNewLine(elClrInput.value)
     renderMeme()
+    renderInputs()
 }
 
 function onSwitchLine() {
     setSwitchLine()
     renderMeme()
-
-    const meme = getMeme()
-    const currentLine = meme.lines[meme.selectedLineIdx]
-    const elTxtInput = document.querySelector('.input-txt')
-    elTxtInput.value = currentLine.txt
-    const elClrInput = document.querySelector('.input-clr')
-    elClrInput.value = currentLine.color
-
+    renderInputs()
 }
 
 function drawTxtFrame(txt, size, x, y) {
@@ -111,4 +119,17 @@ function drawTxtFrame(txt, size, x, y) {
     gCtx.beginPath()
     gCtx.fillStyle = 'rgba(255, 255, 255, 0.4)'
     gCtx.fillRect(rectX, rectY, width, height)
+}
+
+function addListeners() {
+    gElCanvas.addEventListener('mousedown', onDown)
+}
+
+function onDown(ev) {
+    const { offsetX, offsetY } = ev
+    console.log(offsetX, offsetY)
+    const pos = { x: offsetX, y: offsetY }
+    isLineClicked(pos)
+    renderMeme()
+    renderInputs()
 }
