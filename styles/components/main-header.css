@@ -1,5 +1,8 @@
 /* Main Header */
 
 .main-header {
-    height: 160px;
+    flex-direction: row;
+    height: 50px;
+    background-color: var(--clr-primary-base);
+    border-bottom: 3px solid var(--clr-primary-2);
 }

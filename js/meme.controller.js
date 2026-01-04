@@ -133,3 +133,13 @@ function onDown(ev) {
     renderMeme()
     renderInputs()
 }
+
+function showGallery(){
+    const elGallery = document.querySelector('.gallery-container')
+    const elEditor = document.querySelector('.editor-container')
+
+    elGallery.classList.remove('hidden')
+    elEditor.classList.add('hidden')
+
+    renderMeme()
+}

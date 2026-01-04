@@ -1,1 +1,12 @@
 /* Variables */
+
+:root {
+
+    /* Palette */
+    --clr-primary-5: #000;
+    --clr-primary-4: #0a3c30;
+    --clr-primary-3: #00674f;
+    --clr-primary-2: #3ebb9e;
+    --clr-primary-1: #73e6cb;
+    --clr-primary-base: whitesmoke;
+}

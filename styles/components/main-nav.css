@@ -1,1 +1,19 @@
 /* Main Nav */
+
+.main-nav {
+
+    text-transform: uppercase;
+
+    a {
+        color: var(--clr-primary-2);
+        text-decoration: none;
+
+        &:hover{
+            color: var(--clr-primary-3);
+        }
+    }
+
+    >ul {
+        gap: 100px;
+    }
+}

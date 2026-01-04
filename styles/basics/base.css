@@ -3,13 +3,14 @@
 }
 
 html {
-    font-family: sans-serif;
+    font-family: instrument;
     color: black;
 }
 
 body {
     margin: 0;
     font-size: 1rem;
+    background-color: var(--clr-primary-base);
 }
 
 h1,

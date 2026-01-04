@@ -1,1 +1,8 @@
 /* Logo */
+
+.logo {
+    font-family: young;
+    font-size: 2.14285714em;
+    text-transform: uppercase;
+    color: var(--clr-primary-2);
+}

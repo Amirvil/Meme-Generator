@@ -1,1 +1,17 @@
 /* Typography */
+
+/* Ultra */
+@font-face {
+    font-family: young;
+    /* set name */
+    src: url(/fonts/young-serif/YoungSerif-Regular.ttf);
+    /* url of the font */
+}
+
+/* Slabo */
+@font-face {
+    font-family: instrument;
+    /* set name */
+    src: url(/fonts/instrument-sans/InstrumentSans-VariableFont_wdth\,wght.ttf);
+    /* url of the font */
+}

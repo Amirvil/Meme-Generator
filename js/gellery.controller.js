@@ -2,7 +2,7 @@
 
 function renderGallery() {
     const imgs = getImgs()
-    const elGallery = document.querySelector('.gallery-container')
+    const elGallery = document.querySelector('.gallery')
 
     const strHtml = imgs.map(img => `<img src=${img.url} onclick="onImgSelect(${img.id})">`)
     elGallery.innerHTML = strHtml.join('')
@@ -11,10 +11,10 @@ function renderGallery() {
 function onImgSelect(imgId){
     console.log('Hi')
     setImg(imgId)
-    ShowEditor()
+    showEditor()
 }
 
-function ShowEditor(){
+function showEditor(){
     const elGallery = document.querySelector('.gallery-container')
     const elEditor = document.querySelector('.editor-container')
 

@@ -1,0 +1,15 @@
+/* Gallery Container */
+
+.gallery-container {
+    grid-column: 2;
+    display: grid;
+    grid-template-rows: 50px 1fr;
+
+    &.search-bar {
+        grid-row: 1;
+    }
+
+    &.gallery {
+        grid-row: 2;
+    }
+}

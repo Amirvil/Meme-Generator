@@ -5,3 +5,13 @@
 
 /* Components */
 @import url(/styles/components/main-header.css);
+@import url(/styles/components/main-nav.css);
+@import url(/styles/components/logo.css);
+@import url(/styles/components/main-footer.css);
+@import url(/styles/components/editor-container.css);
+@import url(/styles/components/gallery-container.css);
+
+/* Setup */
+@import url(/styles/setup/mq.css);
+@import url(/styles/setup/typography.css);
+@import url(/styles/setup/vars.css);
