@@ -12,14 +12,14 @@ var gMeme = {
             txt: 'I sometimes eat Falafel',
             size: 20,
             color: '#000000',
-            pos: { x: 250, y: 50 },
+            pos: { x: 200, y: 50 },
             width: 0
         },
         {
             txt: 'Wow!',
             size: 20,
             color: '#000000',
-            pos: { x: 250, y: 400 },
+            pos: { x: 200, y: 400 },
             width: 0
         }
     ]
@@ -67,7 +67,9 @@ function setNewLine(color) {
     const newLine = {
         txt: 'This is your new line',
         size: 20,
-        color: color
+        color: color,
+        pos: { x: 200, y: 200 },
+        width: 0
     }
 
     gMeme.lines.push(newLine)
