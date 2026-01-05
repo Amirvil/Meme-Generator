@@ -21,10 +21,10 @@ function renderMeme() {
     const imgUrl = getImgUrlByID(meme.selectedImgId)
     const elImg = new Image()
     elImg.src = imgUrl
-
+    reasizeCanvas(elImg.height, elImg.width)
 
     elImg.onload = () => {
-        gCtx.drawImage(elImg, 0, 0, elImg.naturalWidth, elImg.naturalHeight)
+        gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
         meme.lines.forEach((line, idx) => {
             const { txt, size, color, pos } = line
             gCtx.font = `${size}px Impact`
@@ -144,3 +144,10 @@ function showGallery() {
 
     renderMeme()
 }
+
+function reasizeCanvas(imgHeight, imgWidth) {
+    const elContainer = document.querySelector('.canvas-container')
+    gElCanvas.width = elContainer.offsetWidth
+    gElCanvas.height = imgHeight * gElCanvas.width / imgWidth
+}
+
