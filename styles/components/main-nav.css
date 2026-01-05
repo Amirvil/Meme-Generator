@@ -5,11 +5,11 @@
     text-transform: uppercase;
 
     a {
-        color: var(--clr-primary-2);
+        color: var(--clr-primary-base);
         text-decoration: none;
 
         &:hover{
-            color: var(--clr-primary-3);
+            color: var(--clr-primary-5);
         }
     }
 

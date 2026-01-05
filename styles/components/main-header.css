@@ -1,7 +1,7 @@
 /* Main Header */
 
 .main-header {
-    height: 50px;
-    background-color: var(--clr-primary-base);
-    border-bottom: 3px solid var(--clr-primary-2);
+    height: 150px;
+    background-image: radial-gradient(circle at 50% 50%, var(--clr-primary-1), var(--clr-primary-3));
+    margin-bottom: var(--l-gap);
 }

@@ -6,7 +6,6 @@ var gCtx
 function onInitEditor() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
-
     addListeners()
     renderMeme()
 }
@@ -21,7 +20,7 @@ function renderMeme() {
     const imgUrl = getImgUrlByID(meme.selectedImgId)
     const elImg = new Image()
     elImg.src = imgUrl
-    reasizeCanvas(elImg.height, elImg.width)
+    resizeCanvas(elImg.height, elImg.width)
 
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
@@ -71,6 +70,9 @@ function onTxtChange(txt) {
 }
 
 function onColorChange(color) {
+    const elClrInput = document.querySelector('.clrPicker')
+    console.log(elClrInput)
+    elClrInput.style.setProperty('color', color, 'imprtant')
     setLineColor(color)
     renderMeme()
 }
@@ -82,14 +84,24 @@ function onDownloadImg(elLink) {
 
 function onChangeFontSize(className) {
     switch (className) {
-        case "btn-increase":
+        case "up":
             setFontSize("increase")
             break;
 
-        case "btn-decrease":
+        case "down":
             setFontSize("decrease")
             break;
     }
+    renderMeme()
+}
+
+function onSetMove(direction) {
+    setMove(direction)
+    renderMeme()
+}
+
+function onSetTextAlign(align){
+    setTextAlign(align)
     renderMeme()
 }
 
@@ -102,6 +114,12 @@ function onAddLine() {
 
 function onSwitchLine() {
     setSwitchLine()
+    renderMeme()
+    renderInputs()
+}
+
+function onDeleteLine() {
+    setDeleteLine()
     renderMeme()
     renderInputs()
 }
@@ -142,10 +160,9 @@ function showGallery() {
     elGallery.classList.remove('hidden')
     elEditor.classList.add('hidden')
 
-    renderMeme()
 }
 
-function reasizeCanvas(imgHeight, imgWidth) {
+function resizeCanvas(imgHeight, imgWidth) {
     const elContainer = document.querySelector('.canvas-container')
     gElCanvas.width = elContainer.offsetWidth
     gElCanvas.height = imgHeight * gElCanvas.width / imgWidth

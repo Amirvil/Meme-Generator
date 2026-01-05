@@ -4,11 +4,67 @@
     grid-column: 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--xl-gap);
+    grid-template-rows: auto;
+    gap: var(--l-gap);
 
     >* {
         &.inputs-container {
-            
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: 1fr;
+            justify-items: center;
+            grid-template-areas:
+                "t"
+                "f"
+                "a";
+
+            >* {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: var(--l-gap);
+
+                &.txt-inputs {
+                    grid-area: t;
+                    display: flex;
+                    flex-direction: column;
+
+                    .txt-actions-container {
+                        display: flex;
+                        gap: var(--l-gap);
+                    }
+                }
+
+                &.font-inputs {
+                    grid-area: f;
+                    display: flex;
+                    flex-direction: column;
+
+                    >* {
+                        display: flex;
+                        gap: var(--l-gap);
+                    }
+                }
+
+                &.emojis {
+                    grid-area: e;
+                }
+
+                &.actions {
+                    grid-area: a;
+                }
+            }
         }
     }
+
+    .clr-label {
+        cursor: pointer;
+    }
+
+    .input-clr {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
 }

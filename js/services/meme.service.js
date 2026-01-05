@@ -34,6 +34,33 @@ function setFontSize(direction) {
     }
 }
 
+function setMove(direction) {
+    const idx = gMeme.selectedLineIdx
+
+    if (idx === -1 || !gMeme.lines[idx]) return
+
+    const line = gMeme.lines[idx]
+    const MOVE_STEP = 5
+
+    switch (direction) {
+        case "left":
+            line.pos.x -= MOVE_STEP;
+            break;
+        case "up":
+            line.pos.y -= MOVE_STEP;
+            break;
+        case "down":
+            line.pos.y += MOVE_STEP;
+            break;
+        case "right":
+            line.pos.x += MOVE_STEP;
+            break;
+    }
+
+}
+
+
+
 function setNewLine(color, canvasWidth, canvasHeight) {
     const newLine = {
         txt: 'This is your new line',
@@ -54,6 +81,29 @@ function setSwitchLine() {
         gMeme.selectedLineIdx = -1
         const elTxtInput = document.querySelector('.input-txt')
         elTxtInput.value = ''
+    }
+}
+
+function setDeleteLine() {
+    if (gMeme.selectedLineIdx === -1 || gMeme.lines.length === 0) return
+    gMeme.lines.splice(gMeme.selectedLineIdx, 1)
+    gMeme.selectedLineIdx = -1
+}
+
+function setTextAlign(align) {
+    const line = gMeme.lines[gMeme.selectedLineIdx]
+    if (!line) return
+
+    switch (align) {
+        case 'left':
+            line.pos.x = 5 + line.width / 2
+            break;
+        case 'center':
+            line.pos.x = gElCanvas.width / 2
+            break;
+        case 'right':
+            line.pos.x = gElCanvas.width - 5 - line.width / 2
+            break;
     }
 }
 

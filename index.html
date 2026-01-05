@@ -15,7 +15,7 @@
             <div class="logo inline">Meme Generator</div>
             <nav class="main-nav inline">
                 <ul class="clean-list flex">
-                    <li><a href="#" onclick="showGallery()">Gallery</a></li>
+                    <li><a href="#" onclick="showGallery()"> Gallery</a></li>
                     <li><a href="#" onclick="showEditor()">Editor</a></li>
                     <li><a href="#">Memes</a></li>
                     <li><a href="#">About</a></li>
@@ -27,8 +27,8 @@
 
     <section class="gallery-container">
         <div class="search-bar">
-            <input class="input-search" type="text">
-            <button class="btn-search">Search</button>
+            <input class="input-search input-txt" type="text">
+            <button class="btn-search button-1">Search</button>
         </div>
         <div class="gallery">
 
@@ -39,14 +39,48 @@
         <div class="canvas-container">
             <canvas width="450" height="450"></canvas>
         </div>
+
         <div class="inputs-container">
-            <input class="input-txt" type="text" oninput="onTxtChange(this.value)" />
-            <input class="input-clr" type="color" onchange="onColorChange(this.value)">
-            <button class="btn-increase" onclick="onChangeFontSize(this.className)">Increase Font Size</button>
-            <button class="btn-decrease" onclick="onChangeFontSize(this.className)">Decrease Font Size</button>
-            <button class="btn-add-line" onclick="onAddLine()">Add Line</button>
-            <button class="btn-switch-line" onclick="onSwitchLine()">Switch Line</button>
-            <a href="#" class="btn-download" onclick="onDownloadImg(this)" download="my-img.jpg">Download</a>
+
+            <div class="txt-inputs">
+                <div class="input-txt-container">
+                    <input class="input-txt" type="text" oninput="onTxtChange(this.value)" />
+                </div>
+                <div class="txt-actions-container">
+                    <a class="fa addLine" href="#" onclick="onAddLine()"></a>
+                    <a class="fa switchLine" href="#" onclick="onSwitchLine()"></a>
+                    <a class="fa deleteLine" href="#" onclick="onDeleteLine()"></a>
+                    <label for="input-clr" class="clr-label">
+                        <i class="fa clrPicker"></i>
+                        <input class="input-clr" id="input-clr" type="color" onchange="onColorChange(this.value)">
+                    </label>
+                </div>
+            </div>
+
+            <div class="font-inputs">
+                <div class="clr-size-inputs">
+                    <a class="fa increaseFont" href="#" onclick="onChangeFontSize('up')"></a>
+                    <a class="fa decreaseFont" href="#" onclick="onChangeFontSize('down')"></a>
+                </div>
+                <div class="pos-inputs">
+                    <a class="fa left" href="#" onclick="onSetMove('left')"></a>
+                    <a class="fa up" href="#" onclick="onSetMove('up')"></a>
+                    <a class="fa down" href="#" onclick="onSetMove('down')"></a>
+                    <a class="fa right" href="#" onclick="onSetMove('right')"></a>
+                </div>
+                <div class="align-inputs">
+                    <a class="fa font" href="#" onclick=""></a>
+                    <a class="fa alignLeft" href="#" onclick="onSetTextAlign('left')"></a>
+                    <a class="fa alignCenter" href="#" onclick="onSetTextAlign('center')"></a>
+                    <a class="fa alignRight" href="#" onclick="onSetTextAlign('right')"></a>
+                </div>
+
+            </div>
+            <div class="actions">
+                <button class="btn-download button-1" onclick="onDownloadImg(this)" download="my-img.jpg">Download</button>
+                <button class="btn-share button-1" onclick="">Share</button>
+            </div>
+
         </div>
     </section>
 
