@@ -1,13 +1,23 @@
 'use strict'
 
-var gImgs = [
-    { id: 1, url: '/images/2.jpg', keywords: [] },
-    { id: 2, url: '/images/5.jpg', keywords: [] }
-]
+const gImgs = []
+const imgCount = 25
 
 var gKeywordSearchCountMap = {}
 
+function createGallery() {
+
+    for (let i = 1; i <= imgCount; i++){
+        gImgs.push({
+            id: i,
+            url: `images/${i}.jpg`,
+            keywords: []
+        })
+    }
+}
+
 function getImgs() {
+    createGallery()
     return gImgs
 }
 
