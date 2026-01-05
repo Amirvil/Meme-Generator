@@ -3,22 +3,7 @@
 var gMeme = {
     selectedImgId: 1,
     selectedLineIdx: -1,
-    lines: [
-        {
-            txt: 'I sometimes eat Falafel',
-            size: 20,
-            color: '#000000',
-            pos: { x: 200, y: 50 },
-            width: 0
-        },
-        {
-            txt: 'Wow!',
-            size: 20,
-            color: '#000000',
-            pos: { x: 200, y: 400 },
-            width: 0
-        }
-    ]
+    lines: []
 }
 
 function getMeme() {
@@ -49,12 +34,12 @@ function setFontSize(direction) {
     }
 }
 
-function setNewLine(color) {
+function setNewLine(color, canvasWidth, canvasHeight) {
     const newLine = {
         txt: 'This is your new line',
         size: 20,
         color: color,
-        pos: { x: 200, y: 200 },
+        pos: { x: canvasWidth / 2, y: canvasHeight / 2 },
         width: 0
     }
 

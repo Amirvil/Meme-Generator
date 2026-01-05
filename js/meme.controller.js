@@ -95,7 +95,7 @@ function onChangeFontSize(className) {
 
 function onAddLine() {
     const elClrInput = document.querySelector('.input-clr')
-    setNewLine(elClrInput.value)
+    setNewLine(elClrInput.value, gElCanvas.width, gElCanvas.height)
     renderMeme()
     renderInputs()
 }

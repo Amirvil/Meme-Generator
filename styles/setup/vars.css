@@ -9,4 +9,10 @@
     --clr-primary-2: #3ebb9e;
     --clr-primary-1: #73e6cb;
     --clr-primary-base: whitesmoke;
+
+    /* Gaps */
+    --xl-gap: 40px;
+    --l-gap: 20px;
+    --m-gap: 15px;
+    --s-gap: 10px;
 }
