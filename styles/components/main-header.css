@@ -1,7 +1,6 @@
 /* Main Header */
 
 .main-header {
-    flex-direction: row;
     height: 50px;
     background-color: var(--clr-primary-base);
     border-bottom: 3px solid var(--clr-primary-2);
