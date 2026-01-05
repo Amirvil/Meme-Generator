@@ -9,7 +9,6 @@ function renderGallery() {
 }
 
 function onImgSelect(imgId){
-    console.log('Hi')
     setImg(imgId)
     showEditor()
 }

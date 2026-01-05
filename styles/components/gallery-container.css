@@ -5,11 +5,22 @@
     display: grid;
     grid-template-rows: 50px 1fr;
 
-    &.search-bar {
-        grid-row: 1;
-    }
+    >* {
+        &.search-bar {
+            grid-row: 1;
+        }
 
-    &.gallery {
-        grid-row: 2;
+        &.gallery {
+            grid-row: 2;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+
+            img {
+                width: 100%;
+                cursor: pointer;
+                border-radius: 10px;
+            }
+        }
     }
 }
