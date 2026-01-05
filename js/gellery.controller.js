@@ -1,5 +1,9 @@
 'use strict'
 
+function onInitGallery(){
+    renderGallery()
+}
+
 function renderGallery() {
     const imgs = getImgs()
     const elGallery = document.querySelector('.gallery')
@@ -20,5 +24,5 @@ function showEditor(){
     elGallery.classList.add('hidden')
     elEditor.classList.remove('hidden')
 
-    renderMeme()
+    onInitEditor()
 }

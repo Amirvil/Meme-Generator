@@ -3,19 +3,20 @@
 var gElCanvas
 var gCtx
 
-function onInit() {
+function onInitEditor() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
 
     addListeners()
-
-    renderGallery()
-
-    // renderMeme()
+    renderMeme()
 }
 
+function onClearCanvas() {
+    gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
+}
 
 function renderMeme() {
+    onClearCanvas()
     const meme = getMeme()
     const imgUrl = getImgUrlByID(meme.selectedImgId)
     const elImg = new Image()
@@ -134,7 +135,7 @@ function onDown(ev) {
     renderInputs()
 }
 
-function showGallery(){
+function showGallery() {
     const elGallery = document.querySelector('.gallery-container')
     const elEditor = document.querySelector('.editor-container')
 
