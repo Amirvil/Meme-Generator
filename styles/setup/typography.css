@@ -4,7 +4,7 @@
 @font-face {
     font-family: young;
     /* set name */
-    src: url(./fonts/young-serif/YoungSerif-Regular.ttf);
+    src: url(/fonts/young-serif/YoungSerif-Regular.ttf);
     /* url of the font */
 }
 
@@ -12,14 +12,14 @@
 @font-face {
     font-family: instrument;
     /* set name */
-    src: url(./fonts/instrument-sans/InstrumentSans-VariableFont_wdth\,wght.ttf);
+    src: url(/fonts/instrument-sans/InstrumentSans-VariableFont_wdth\,wght.ttf);
     /* url of the font */
 }
 
 /* Font Awesome */
 @font-face {
     font-family: fa;
-    src: url(./fonts/fa/fa-solid-900.woff2);
+    src: url(/fonts/fa/fa-solid-900.woff2);
 }
 
 /* Fa Helpers */
