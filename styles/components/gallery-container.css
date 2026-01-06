@@ -2,24 +2,10 @@
 
 .gallery-container {
     grid-column: 2;
-    display: grid;
-    grid-template-rows: auto 1fr;
-    height: 100%;
     overflow: hidden;
 
-    border: 5px solid var(--clr-primary-3);
-    border-radius: 10px;
-
     >* {
-        &.search-bar {
-            grid-row: 1;
-            padding: 10px 0;
-            border-bottom: 5px solid var(--clr-primary-3);
-            padding: 10px;
-        }
-
         &.gallery {
-            grid-row: 2;
             overflow-y: auto;
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -30,7 +16,7 @@
                 width: 100%;
                 cursor: pointer;
                 border-radius: 10px;
-                transition: transform .3s ease;
+                transition: transform .4s ease;
 
                 &:hover {
                     transform: scale(1.1);

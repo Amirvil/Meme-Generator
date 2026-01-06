@@ -2,6 +2,41 @@
 
 .editor-container {
     >* {
+        &.canvas-container {}
+
+        &.inputs-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(6, auto);
+            grid-auto-flow: column;
+
+            width: 100%;
+
+            >* {
+                display: flex;
+                justify-content: space-evenly;
+            }
+
+        }
+    }
+
+    .clr-label {
+        cursor: pointer;
+    }
+
+    .input-clr {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .input-txt{
+        height: 40px;
+    }
+}
+
+/* .editor-container {
+    >* {
         border-radius: 10px;
         background-color: rgba(var(--clr-primary--1-rgb), 0.3);
 
@@ -64,4 +99,4 @@
         cursor: pointer;
     }
 
-}
+} */

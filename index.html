@@ -12,7 +12,7 @@
 
     <div class="main-screen" onclick="toggleMenu()"></div>
 
-    <header class="main-header full main-layout">
+    <header class="main-header main-layout">
         <div class="header-container flex space-between align-center">
             <div class="logo">Meme Generator</div>
             <nav class="main-nav">
@@ -28,7 +28,7 @@
 
     </header>
 
-    <section class="gallery-container">
+    <section class="gallery-container gallery-layout">
         <div class="search-bar">
             <input class="input-search input-txt" type="text">
             <button class="btn-search button-1">Search</button>
@@ -45,40 +45,33 @@
 
         <div class="inputs-container">
 
-            <div class="txt-inputs">
-                <div class="input-txt-container">
-                    <input class="input-line-txt input-txt" type="text" oninput="onTxtChange(this.value)" />
-                </div>
-                <div class="txt-actions-container">
-                    <a class="fa addLine" href="#" onclick="onAddLine()"></a>
-                    <a class="fa switchLine" href="#" onclick="onSwitchLine()"></a>
-                    <a class="fa deleteLine" href="#" onclick="onDeleteLine()"></a>
-                    <label for="input-clr" class="clr-label">
-                        <i class="fa clrPicker"></i>
-                        <input class="input-clr" id="input-clr" type="color" onchange="onColorChange(this.value)">
-                    </label>
-                </div>
+            <input class="input-line-txt input-txt" type="text" oninput="onTxtChange(this.value)" />
+            <div class="txt-actions-container">
+                <a class="fa addLine" href="#" onclick="onAddLine()"></a>
+                <a class="fa switchLine" href="#" onclick="onSwitchLine()"></a>
+                <a class="fa deleteLine" href="#" onclick="onDeleteLine()"></a>
+                <label for="input-clr" class="clr-label">
+                    <i class="fa clrPicker"></i>
+                    <input class="input-clr" id="input-clr" type="color" onchange="onColorChange(this.value)">
+                </label>
+            </div>
+            <div class="clr-size-inputs">
+                <a class="fa increaseFont" href="#" onclick="onChangeFontSize('up')"></a>
+                <a class="fa decreaseFont" href="#" onclick="onChangeFontSize('down')"></a>
+            </div>
+            <div class="pos-inputs">
+                <a class="fa left" href="#" onclick="onSetMove('left')"></a>
+                <a class="fa up" href="#" onclick="onSetMove('up')"></a>
+                <a class="fa down" href="#" onclick="onSetMove('down')"></a>
+                <a class="fa right" href="#" onclick="onSetMove('right')"></a>
+            </div>
+            <div class="align-inputs">
+                <a class="fa font" href="#" onclick=""></a>
+                <a class="fa alignLeft" href="#" onclick="onSetTextAlign('left')"></a>
+                <a class="fa alignCenter" href="#" onclick="onSetTextAlign('center')"></a>
+                <a class="fa alignRight" href="#" onclick="onSetTextAlign('right')"></a>
             </div>
 
-            <div class="font-inputs">
-                <div class="clr-size-inputs">
-                    <a class="fa increaseFont" href="#" onclick="onChangeFontSize('up')"></a>
-                    <a class="fa decreaseFont" href="#" onclick="onChangeFontSize('down')"></a>
-                </div>
-                <div class="pos-inputs">
-                    <a class="fa left" href="#" onclick="onSetMove('left')"></a>
-                    <a class="fa up" href="#" onclick="onSetMove('up')"></a>
-                    <a class="fa down" href="#" onclick="onSetMove('down')"></a>
-                    <a class="fa right" href="#" onclick="onSetMove('right')"></a>
-                </div>
-                <div class="align-inputs">
-                    <a class="fa font" href="#" onclick=""></a>
-                    <a class="fa alignLeft" href="#" onclick="onSetTextAlign('left')"></a>
-                    <a class="fa alignCenter" href="#" onclick="onSetTextAlign('center')"></a>
-                    <a class="fa alignRight" href="#" onclick="onSetTextAlign('right')"></a>
-                </div>
-
-            </div>
             <div class="actions">
                 <a href="#" class="btn-download button-1" onclick="onDownloadImg(this)"
                     download="my-img.jpg">Download</a>
@@ -87,6 +80,10 @@
 
         </div>
     </section>
+
+    <footer class="main-footer">
+
+    </footer>
 
     <script src="js/meme.controller.js"></script>
     <script src="js/services/meme.service.js"></script>

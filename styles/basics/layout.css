@@ -19,12 +19,22 @@
 
 /* Gallery Layout */
 
-.gallery-layout {}
+.gallery-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+}
 
 /* Editor Layout */
 
 .editor-layout {
-    display: flex;
-    flex-direction: column;
+    grid-column: 1;
+    grid-row: 2;
+
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
     gap: 20px;
+    justify-items: center;
 }
