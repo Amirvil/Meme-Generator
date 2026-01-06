@@ -67,9 +67,9 @@ function setNewLine(color, canvasWidth, canvasHeight) {
         size: 20,
         color: color,
         pos: { x: canvasWidth / 2, y: canvasHeight / 2 },
-        width: 0
+        width: 0,
+        isDrag: false
     }
-
     gMeme.lines.push(newLine)
     gMeme.selectedLineIdx = gMeme.lines.length - 1
 }
@@ -112,11 +112,16 @@ function isLineClicked(clickedPos) {
         return (
             clickedPos.x >= line.pos.x - line.width / 2 &&
             clickedPos.x <= line.pos.x + line.width / 2 &&
-            clickedPos.y >= line.pos.y - line.size / 2 &&
-            clickedPos.y <= line.pos.y + line.size / 2
+            clickedPos.y >= line.pos.y - line.size &&
+            clickedPos.y <= line.pos.y + line.size
         )
     })
+    gMeme.selectedLineIdx = clickedLineIdx
+    return (gMeme.selectedLineIdx >= 0) ? true : false
+}
 
-    if (clickedLineIdx !== -1) gMeme.selectedLineIdx = clickedLineIdx
-    else gMeme.selectedLineIdx = -1
+function moveLine(dx, dy) {
+    const line = gMeme.lines[gMeme.selectedLineIdx]
+    line.pos.x += dx
+    line.pos.y += dy
 }
