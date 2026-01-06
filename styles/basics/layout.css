@@ -3,8 +3,10 @@
 .main-layout {
     display: grid;
     grid-template-columns: 16px 1fr 16px;
+    grid-template-rows: 100px 1fr 100px;
+    height: 100vh;
 
-     >* {
+    >* {
         &:not(.full) {
             grid-column: 2;
         }
@@ -15,3 +17,14 @@
     }
 }
 
+/* Gallery Layout */
+
+.gallery-layout {}
+
+/* Editor Layout */
+
+.editor-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

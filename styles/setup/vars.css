@@ -17,4 +17,9 @@
     --l-gap: 20px;
     --m-gap: 15px;
     --s-gap: 10px;
+
+    /* Layout Size */
+    --s: 600px;
+    --m: 880px;
+    --l: 1060px; 
 }

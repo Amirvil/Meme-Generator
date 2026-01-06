@@ -1,14 +1,6 @@
 /* Editor Container */
 
 .editor-container {
-    grid-column: 2;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    gap: var(--l-gap);
-
-
-
     >* {
         border-radius: 10px;
         background-color: rgba(var(--clr-primary--1-rgb), 0.3);
