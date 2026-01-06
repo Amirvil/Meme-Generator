@@ -25,7 +25,7 @@
 /* Fa Helpers */
 
 .fa {
-    color: var(--clr-primary-2);
+    color: var(--clr-primary-3);
 
     &::before {
         font-family: fa;

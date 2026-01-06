@@ -7,7 +7,12 @@
     grid-template-rows: auto;
     gap: var(--l-gap);
 
+
+
     >* {
+        border-radius: 10px;
+        background-color: rgba(var(--clr-primary--1-rgb), 0.3);
+
         &.inputs-container {
             display: grid;
             grid-template-rows: repeat(3, 1fr);

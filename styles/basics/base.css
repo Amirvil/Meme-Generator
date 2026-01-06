@@ -10,7 +10,7 @@ html {
 body {
     margin: 0;
     font-size: 1rem;
-    background-color: var(--clr-primary-base);
+    background-image: radial-gradient(circle at 50% 50%, var(--clr-primary-1), var(--clr-primary-2));
 }
 
 h1,
@@ -21,6 +21,10 @@ h5,
 h6 {
     margin: 0 0 1em;
     font-weight: 600;
+}
+
+canvas {
+    border-radius: 10px;
 }
 
 a {
@@ -38,12 +42,12 @@ a {
 }
 
 .input-txt:focus {
-    border-color: var(--clr-primary-2);
-    box-shadow: 0 0 0 0.2rem var(--clr-primary-2);
+    border-color: var(--clr-primary-3);
+    box-shadow: 0 0 0 0.2rem var(--clr-primary-4);
 }
 
 .button-1 {
-    background-color: var(--clr-primary-1);
+    background-color: var(--clr-primary-3);
     border-radius: 8px;
     border-style: none;
     box-sizing: border-box;
@@ -71,5 +75,5 @@ a {
 
 .button-1:hover,
 .button-1:focus {
-    background-color: var(--clr-primary-4);
+    background-color: var(--clr-primary-5);
 }

@@ -2,6 +2,7 @@
 
 .main-header {
     height: 150px;
-    background-image: radial-gradient(circle at 50% 50%, var(--clr-primary-1), var(--clr-primary-3));
+    background-image: radial-gradient(circle at 50% 50%, var(--clr-primary-1), var(--clr-primary-2));
+    border-bottom: 5px solid var(--clr-primary-4);
     margin-bottom: var(--l-gap);
 }
