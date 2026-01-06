@@ -10,6 +10,7 @@
 @import url(/styles/components/main-footer.css);
 @import url(/styles/components/editor-container.css);
 @import url(/styles/components/gallery-container.css);
+@import url(/styles/components/main-screen.css);
 
 /* Setup */
 @import url(/styles/setup/mq.css);

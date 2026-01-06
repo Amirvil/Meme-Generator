@@ -10,6 +10,8 @@
 
 <body class="main-layout" onload="onInitGallery()">
 
+    <div class="main-screen" onclick="toggleMenu()"></div>
+
     <header class="main-header full main-layout">
         <div class="header-container flex space-between align-center">
             <div class="logo inline">Meme Generator</div>
@@ -21,6 +23,7 @@
                     <li><a href="#">About</a></li>
                 </ul>
             </nav>
+            <button onclick="toggleMenu()" class="btn-toggle-menu">☰</button>
         </div>
 
     </header>
@@ -77,7 +80,8 @@
 
             </div>
             <div class="actions">
-                <a href="#" class="btn-download button-1" onclick="onDownloadImg(this)" download="my-img.jpg">Download</a>
+                <a href="#" class="btn-download button-1" onclick="onDownloadImg(this)"
+                    download="my-img.jpg">Download</a>
                 <button class="btn-share button-1" onclick="">Share</button>
             </div>
 

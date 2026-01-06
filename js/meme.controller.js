@@ -41,7 +41,6 @@ function renderMeme() {
 }
 
 function renderInputs() {
-    debugger
     const elTxtInput = document.querySelector('.input-line-txt')
     const elClrInput = document.querySelector('.input-clr')
     if (gMeme.selectedLineIdx !== -1) {
@@ -206,6 +205,8 @@ function onUp() {
     renderMeme()
 }
 
-
+function toggleMenu(){
+    document.body.classList.toggle('menu-open')
+}
 
 

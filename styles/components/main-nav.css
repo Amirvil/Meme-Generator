@@ -12,8 +12,4 @@
             color: var(--clr-primary-5);
         }
     }
-
-    >ul {
-        gap: 100px;
-    }
 }
