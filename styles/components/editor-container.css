@@ -2,7 +2,6 @@
 
 .editor-container {
     >* {
-        &.canvas-container {}
 
         &.inputs-container {
             display: grid;

@@ -1,18 +1,18 @@
 /* Basics */
-@import url(./styles/basics/base.css);
-@import url(./styles/basics/helpers.css);
-@import url(./styles/basics/layout.css);
+@import url(./basics/base.css);
+@import url(./basics/helpers.css);
+@import url(./basics/layout.css);
 
 /* Components */
-@import url(./styles/components/main-header.css);
-@import url(./styles/components/main-nav.css);
-@import url(./styles/components/logo.css);
-@import url(./styles/components/main-footer.css);
-@import url(./styles/components/editor-container.css);
-@import url(./styles/components/gallery-container.css);
-@import url(./styles/components/main-screen.css);
+@import url(./components/main-header.css);
+@import url(./components/main-nav.css);
+@import url(./components/logo.css);
+@import url(./components/main-footer.css);
+@import url(./components/editor-container.css);
+@import url(./components/gallery-container.css);
+@import url(./components/main-screen.css);
 
 /* Setup */
-@import url(./styles/setup/mq.css);
-@import url(./styles/setup/typography.css);
-@import url(./styles/setup/vars.css);
+@import url(./setup/mq.css);
+@import url(./setup/typography.css);
+@import url(./setup/vars.css);
