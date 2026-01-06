@@ -1,8 +1,8 @@
 /* Main Footer */
 
 .main-footer {
-    height: 100px;
-    background-image: radial-gradient(circle at 50% 50%, var(--clr-primary-1), var(--clr-primary-2));
-    border-radius: 20px;
+    height: 50px;
     margin-bottom: var(--s-gap);
+    justify-content: center;
+    border-top: 1px solid var(--clr-primary--1);
 }

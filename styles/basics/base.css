@@ -10,7 +10,7 @@ html {
 body {
     margin: 0;
     font-size: 1rem;
-    background-image: radial-gradient(circle at 50% 50%, var(--clr-primary-1), var(--clr-primary-2));
+    background-color: var(--clr-primary-base);
 }
 
 h1,
@@ -45,4 +45,36 @@ a {
 .input-txt:focus {
     border-color: var(--clr-primary-3);
     box-shadow: 0 0 0 0.2rem var(--clr-primary-4);
+}
+
+
+/* CSS */
+.button-1{
+    background-color: var(--clr-primary-2);
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-1:hover,
+.button-1:focus {
+    background-color: var(--clr-primary-5);
 }

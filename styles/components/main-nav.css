@@ -5,7 +5,7 @@
     text-transform: uppercase;
 
     a {
-        color: var(--clr-primary-base);
+        color: var(--clr-primary-3);
         text-decoration: none;
 
         &:hover{

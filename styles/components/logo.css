@@ -3,5 +3,11 @@
 .logo {
     font-family: young;
     font-size: 2em;
-    color: var(--clr-primary-base);
+    color: var(--clr-primary-2);
+
+    >*{
+        &.logo-span{
+            color: var(--clr-primary-3);
+        }
+    }
 }

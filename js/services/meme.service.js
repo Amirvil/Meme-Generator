@@ -16,6 +16,7 @@ function setLineTxt(txt) {
 
 function setImg(imgId) {
     gMeme.selectedImgId = imgId
+    gMeme.lines = []
 }
 
 function setLineColor(color) {
