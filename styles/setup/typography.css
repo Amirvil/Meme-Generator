@@ -1,11 +1,6 @@
 /* Typography */
 
 @font-face {
-    font-family: inconsolata;
-    src: url(/fonts/inconsolata/Inconsolata-Regular.ttf);
-}
-
-@font-face {
     font-family: bubble;
     src: url(/fonts/bubble/BubblegumSans-Regular.ttf);
 }
@@ -16,9 +11,10 @@
 }
 
 @font-face {
-    font-family: lato;
-    src: url(/fonts/lato/Lato-Regular.ttf);
+    font-family: inconsolata;
+    src: url(/fonts/inconsolata/Inconsolata-Regular.ttf);
 }
+
 
 @font-face {
     font-family: montserrat;
@@ -43,122 +39,4 @@
 @font-face {
     font-family: spectral;
     src: url(/fonts/spectral/Spectral-Regular.ttf);
-}
-
-@font-face {
-    font-family: young;
-    src: url(/fonts/young-serif/YoungSerif-Regular.ttf);
-}
-
-@font-face {
-    font-family: instrument;
-    src: url(/fonts/instrument-sans/InstrumentSans-VariableFont_wdth\,wght.ttf)
-}
-
-/* Font Awesome */
-@font-face {
-    font-family: fa;
-    src: url(/fonts/fa/fa-solid-900.woff2);
-}
-
-/* Fa Helpers */
-
-.fa {
-    color: var(--clr-primary-3);
-
-    &::before {
-        font-family: fa;
-        font-size: 2rem;
-    }
-
-    &:hover::before {
-        color: var(--clr-primary-5);
-    }
-}
-
-.fa.clrPicker::before {
-    content: "\f53f";
-}
-
-.fa.up::before {
-    content: "\f35b";
-}
-
-.fa.down::before {
-    content: "\f358";
-}
-
-.fa.right::before {
-    content: "\f35a";
-}
-
-.fa.left::before {
-    content: "\f359";
-}
-
-.fa.addLine {
-    &::before {
-        content: "\f0fe";
-        color: rgb(0, 209, 0);
-    }
-
-    &:hover::before {
-        color: rgb(0, 135, 0);
-    }
-
-}
-
-.fa.deleteLine {
-    &::before {
-        content: "\f2ed";
-        color: rgb(245, 85, 85);
-    }
-
-    &:hover::before {
-        color: rgb(152, 1, 1);
-    }
-}
-
-.fa.switchLine {
-    &::before {
-        content: "\f338";
-        color: rgb(85, 85, 249);
-    }
-
-    &:hover::before {
-        color: rgb(0, 0, 166);
-    }
-}
-
-.fa.increaseFont::before {
-    content: "\2b";
-}
-
-.fa.decreaseFont::before {
-    content: "\f068";
-}
-
-.fa.font::before {
-    content: "\f031";
-}
-
-.fa.alignLeft::before {
-    content: "\f036";
-}
-
-.fa.alignRight::before {
-    content: "\f038";
-}
-
-.fa.alignCenter::before {
-    content: "\f037";
-}
-
-.fa.download::before {
-    content: "\f019";
-}
-
-.fa.menu::before {
-    content: "\f0c9";
-    font-size: 1.5rem;
 }

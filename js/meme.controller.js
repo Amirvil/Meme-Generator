@@ -8,15 +8,28 @@ function onInitEditor() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
     addListeners()
+    initButtons()
     renderInputs()
     renderMeme()
+}
+
+function initButtons() {
+    const buttons = document.querySelectorAll('.inputs-container button')
+    buttons.forEach(button => {
+        const imgUrl = `images/buttons/${button.className}.svg`
+        button.style.backgroundImage = `url(${imgUrl})`
+        button.style.backgroundRepeat = "no-repeat";
+        button.style.backgroundPosition = "center";
+        button.style.backgroundSize = "70%";
+    })
+
 }
 
 function onClearCanvas() {
     gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
 }
 
-async function renderMeme() {
+function renderMeme() {
     onClearCanvas()
     const meme = getMeme()
     const imgUrl = getImgUrlByID(meme.selectedImgId)
@@ -48,7 +61,7 @@ function resizeCanvas(imgHeight, imgWidth) {
 }
 
 function renderInputs() {
-    const elTxtInput = document.querySelector('.input-line-txt')
+    const elTxtInput = document.querySelector('.input-line')
     const elClrInput = document.querySelector('.input-clr')
     if (gMeme.selectedLineIdx !== -1) {
         const currentLine = gMeme.lines[gMeme.selectedLineIdx]
@@ -78,7 +91,7 @@ function onTxtChange(txt) {
 }
 
 function onColorChange(color) {
-    const elClrInput = document.querySelector('.clrPicker')
+    const elClrInput = document.querySelector('.input-clr')
     console.log(elClrInput)
     elClrInput.style.setProperty('color', color, 'imprtant')
     setLineColor(color)
@@ -90,16 +103,8 @@ function onDownloadImg(elLink) {
     elLink.href = imgContent
 }
 
-function onChangeFontSize(className) {
-    switch (className) {
-        case "up":
-            setFontSize("increase")
-            break;
-
-        case "down":
-            setFontSize("decrease")
-            break;
-    }
+function onChangeFontSize(direction) {
+    setFontSize(direction)
     renderMeme()
 }
 
@@ -115,7 +120,7 @@ function onSetTextAlign(align) {
 
 function onAddLine() {
     const elClrInput = document.querySelector('.input-clr')
-    const elFontInput = document.querySelector('.input-font')
+    const elFontInput = document.querySelector('.select-font')
     setNewLine(elClrInput.value, gElCanvas.width, gElCanvas.height, elFontInput.value)
     renderInputs()
     renderMeme()
@@ -151,6 +156,8 @@ function drawTxtFrame(txt, size, x, y, font) {
 }
 
 function showGallery() {
+    onUpdateNav('gallery')
+    closeMenuMobile()
     const elGallery = document.querySelector('.gallery-container')
     const elEditor = document.querySelector('.editor-container')
     elGallery.classList.remove('hidden')
@@ -218,5 +225,32 @@ function onSetFont(font) {
     setFont(font)
     renderMeme()
 }
+
+function onShare(ev) {
+    ev.preventDefault()
+    const canvasData = gElCanvas.toDataURL('image/jpeg')
+
+    function onSuccess(uploadedImgUrl) {
+        const encodedUploadedImgUrl = encodeURIComponent(uploadedImgUrl)
+        console.log('encodedUploadedImgUrl:', encodedUploadedImgUrl)
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodedUploadedImgUrl}&t=${encodedUploadedImgUrl}`)
+    }
+    uploadImg(canvasData, onSuccess)
+}
+
+function onUpdateNav(pageName) {
+    const elLinks = document.querySelectorAll('.main-nav a')
+    elLinks.forEach(elLink => {
+        const isMatch = elLink.innerText.toLowerCase() === pageName.toLowerCase()
+        elLink.classList.toggle('active', isMatch)
+    })
+}
+
+function closeMenuMobile(){
+    if (window.innerWidth <= 660){
+        document.body.classList.remove('menu-open')
+    }
+}
+
 
 

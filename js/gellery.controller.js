@@ -18,6 +18,8 @@ function onImgSelect(imgId) {
 }
 
 function showEditor() {
+    onUpdateNav('editor')
+    closeMenuMobile()
     const elGallery = document.querySelector('.gallery-container')
     const elEditor = document.querySelector('.editor-container')
     elGallery.classList.add('hidden')

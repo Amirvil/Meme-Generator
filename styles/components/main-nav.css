@@ -2,28 +2,15 @@
 
 .main-nav {
 
-    text-transform: uppercase;
-    height: 100%;
-
-    ul {
-        height: 100%;
-    }
-
     a {
-        height: 100%;
+        display: grid;
+        place-items: center;
+        width: 100px;
+        aspect-ratio: 1 / 1;
         align-items: center;
-        color: var(--clr-primary-3);
-        font-size: 1.2em;
+        color: var(--clr-nav-links);
+        font-size: 2em;
 
-        &:hover {
-            color: var(--clr-primary-5);
-        }
-
-        /* &.active {
-            box-shadow: inset 0px -6px 0 var(--clr-primary-5);
-            color: var(--clr-primary-5);
-            cursor: default;
-
-        } */
+        transition: color .6s, box-shadow .6s;
     }
 }

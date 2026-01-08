@@ -5,11 +5,11 @@
     /* Palette */
     --clr-primary-5: #311D3F;
     --clr-primary-4: #522546;
-    --clr-primary-3: #88304E;
-    --clr-primary-2: #E23E57;
-    --clr-primary-1: #EEEEEE;
-    --clr-primary-base: whitesmoke;
-    --clr-primary--1: #e1e1e1;
+    --clr-primary-2: #03DAC6;
+    --clr-nav-links:#BB86FC;
+    --clr-surface: #1E1E1E;
+    --clr-base: #121212;
+    --clr-txt: #FFFFFF;
     --clr-primary--1-rgb: 225, 225, 225;
 
     /* Gaps */

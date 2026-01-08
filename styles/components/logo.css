@@ -2,12 +2,12 @@
 
 .logo {
     font-family: bubble;
-    font-size: 2.2em;
-    color: var(--clr-primary-2);
+    font-size: 2.7em;
+    color: var(--clr-nav-links);
 
     >*{
         &.logo-span{
-            color: var(--clr-primary-4);
+            color: var(--clr-primary-2);
         }
     }
 }

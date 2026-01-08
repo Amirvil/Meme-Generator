@@ -4,5 +4,5 @@
     height: 50px;
     margin-bottom: var(--s-gap);
     justify-content: center;
-    border-top: 1px solid var(--clr-primary--1);
+    background-color: var(--clr-surface);
 }

@@ -3,5 +3,5 @@
 .main-header {
     height: 100px;
     margin-bottom: var(--s-gap);
-    border-bottom: 1px solid var(--clr-primary--1);
+    background-color: var(--clr-surface);
 }

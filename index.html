@@ -12,26 +12,26 @@
 
     <div class="main-screen" onclick="toggleMenu()"></div>
 
-    <header class="main-header main-layout">
+    <header class="main-header full main-layout">
         <div class="header-container flex space-between align-center">
             <div class="logo">Meme <span class="logo-span">Generator</span></div>
             <nav class="main-nav">
                 <ul class="clean-list flex">
-                    <li><a class="flex active" href="#" onclick="showGallery()"> Gallery</a></li>
-                    <li><a class="flex" href="#" onclick="showEditor()">Editor</a></li>
+                    <li><a class="flex active" href="#" onclick="showGallery(this)">Gallery</a></li>
+                    <li><a class="flex" href="#" onclick="showEditor(this)">Editor</a></li>
                     <li><a class="flex" href="#">Memes</a></li>
                     <li><a class="flex" href="#">About</a></li>
                 </ul>
             </nav>
-            <button onclick="toggleMenu()" class="btn-toggle-menu fa menu"></button>
+            <button onclick="toggleMenu()" class="btn-toggle-menu">☰</button>
         </div>
 
     </header>
 
     <section class="gallery-container gallery-layout">
         <div class="search-bar">
-            <input class="input-search input-txt" type="text">
-            <button class="btn-search button-1">Search</button>
+            <!-- <input class="input-search input-txt" type="text">
+            <button class="btn-search button-1">Search</button> -->
         </div>
         <div class="gallery">
 
@@ -45,50 +45,49 @@
 
         <div class="inputs-container">
 
-            <input class="input-line-txt input-txt" type="text" oninput="onTxtChange(this.value)" />
-            <div class="txt-actions-container">
-                <a class="fa addLine" href="#" onclick="onAddLine()"></a>
-                <a class="fa switchLine" href="#" onclick="onSwitchLine()"></a>
-                <a class="fa deleteLine" href="#" onclick="onDeleteLine()"></a>
-                <label for="input-clr" class="clr-label">
-                    <i class="fa clrPicker"></i>
-                    <input class="input-clr" id="input-clr" type="color" onchange="onColorChange(this.value)">
-                </label>
+            <input class="input-line input-txt" type="text" oninput="onTxtChange(this.value)" />
+
+            <select class="select-font" onchange="onSetFont(this.value)">
+                <option value='inconsolata'>inconsolata</option>
+                <option value='montserrat'>montserrat</option>
+                <option value='playfair'>playfair</option>
+                <option value='roboto'>roboto</option>
+                <option value='sono'>sono</option>
+                <option value='spectral'>spectral</option>
+            </select>
+
+            <div class="btn-line-container">
+                <button class="btn-add-line" onclick="onAddLine()"></button>
+                <button class="btn-del-line" onclick="onDeleteLine()"></button>
+                <button class="btn-switch-line" onclick="onSwitchLine()"></button>
+                <input class="input-clr" id="input-clr" type="color" onchange="onColorChange(this.value)">
             </div>
-            <div class="clr-size-inputs">
-                <a class="fa increaseFont" href="#" onclick="onChangeFontSize('up')"></a>
-                <a class="fa decreaseFont" href="#" onclick="onChangeFontSize('down')"></a>
+
+            <div class="btn-font-container">
+                <button class="btn-inc-font btn2" onclick="onChangeFontSize('increase')">A+</button>
+                <button class="btn-dec-font btn2" onclick="onChangeFontSize('decrease')">A-</button>
+                <button class="btn-align-left" onclick="onSetTextAlign('left')"></button>
+                <button class="btn-align-center" onclick="onSetTextAlign('center')"></button>
+                <button class="btn-align-right" onclick="onSetTextAlign('right')"></button>
+
             </div>
-            <div class="pos-inputs">
-                <a class="fa left" href="#" onclick="onSetMove('left')"></a>
-                <a class="fa up" href="#" onclick="onSetMove('up')"></a>
-                <a class="fa down" href="#" onclick="onSetMove('down')"></a>
-                <a class="fa right" href="#" onclick="onSetMove('right')"></a>
-            </div>
-            <div class="align-inputs">
-                <select class="input-font" onchange="onSetFont(this.value)">
-                    <option value='inconsolata'>inconsolata</option>
-                    <option value='montserrat'>montserrat</option>
-                    <option value='playfair'>playfair</option>
-                    <option value='roboto'>roboto</option>
-                    <option value='sono'>sono</option>
-                    <option value='spectral'>spectral</option>
-                </select>
-                <a class="fa alignLeft" href="#" onclick="onSetTextAlign('left')"></a>
-                <a class="fa alignCenter" href="#" onclick="onSetTextAlign('center')"></a>
-                <a class="fa alignRight" href="#" onclick="onSetTextAlign('right')"></a>
+
+            <div class="btn-move-container">
+                <button class="btn-move-left" onclick="onSetMove('left')"></button>
+                <button class="btn-move-up" onclick="onSetMove('up')"></button>
+                <button class="btn-move-down" onclick="onSetMove('down')"></button>
+                <button class="btn-move-right" onclick="onSetMove('right')"></button>
             </div>
 
             <div class="actions">
-                <a href="#" class="btn-download button-1" onclick="onDownloadImg(this)"
-                    download="my-img.jpg">Download</a>
-                <button class="btn-share button-1" onclick="">Share</button>
+                <a href="#" class="btn-download" onclick="onDownloadImg(this)" download="my-img.jpg">Download</a>
+                <button class="btn-share btn2" onclick="onShare(event)">Share</button>
             </div>
 
         </div>
     </section>
 
-    <footer class="main-footer flex align-center ">
+    <footer class="main-footer full flex align-center ">
         <small>@ allrights 2025</small>
     </footer>
 

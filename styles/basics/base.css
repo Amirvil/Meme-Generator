@@ -10,7 +10,8 @@ html {
 body {
     margin: 0;
     font-size: 1rem;
-    background-color: var(--clr-primary-base);
+    background-color: var(--clr-base);
+    color: var(--clr-txt);
 }
 
 h1,
@@ -26,6 +27,11 @@ h6 {
 canvas {
     width: 100%;
     border-radius: 10px;
+    box-shadow:
+        0 4px 6px -1px rgba(255, 255, 255, 0.7),
+        0 10px 15px -3px rgba(255, 255, 255, 0.7),
+        0 20px 25px -5px rgba(255, 255, 255, 0.7);
+    margin: 20px;
 }
 
 a {
@@ -46,34 +52,43 @@ a {
     box-shadow: 0 0 0 0.2rem var(--clr-primary-4);
 }
 
+button {
+    padding: 24px 24px;
+    margin-top: 10px;
 
-/* CSS */
-.button-1{
-    background-color: var(--clr-primary-2);
-    border-radius: 8px;
-    border-style: none;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    cursor: pointer;
-    display: inline-block;
+    background-color: #BB86FC;
+    color: #000;
+    font-weight: bold;
     font-size: 20px;
-    height: 40px;
-    line-height: 20px;
-    list-style: none;
-    margin: 0;
-    outline: none;
-    padding: 10px 16px;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    transition: color 100ms;
-    vertical-align: baseline;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
 }
 
-.button-1:hover,
-.button-1:focus {
-    background-color: var(--clr-primary-5);
+button:hover {
+    background-color: #d1b1ff;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.btn2 {
+    padding: 14px 14px;
+}
+
+.btn-clr {
+    background-image: url('/images/buttons/btn-color.svg');
+}
+
+.clr-label {
+    color: #BB86FC;
+}
+
+.btn-toggle-menu{
+    padding: 5px 10px;
+
 }

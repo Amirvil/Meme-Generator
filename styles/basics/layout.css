@@ -37,5 +37,5 @@
     grid-template-rows: auto 1fr;
     grid-template-columns: 1fr;
     justify-items: center;
-    gap: 40px;
+    gap: 20px;
 }
