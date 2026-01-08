@@ -3,13 +3,27 @@
 .main-nav {
 
     text-transform: uppercase;
+    height: 100%;
+
+    ul {
+        height: 100%;
+    }
 
     a {
+        height: 100%;
+        align-items: center;
         color: var(--clr-primary-3);
-        text-decoration: none;
+        font-size: 1.2em;
 
-        &:hover{
+        &:hover {
             color: var(--clr-primary-5);
         }
+
+        /* &.active {
+            box-shadow: inset 0px -6px 0 var(--clr-primary-5);
+            color: var(--clr-primary-5);
+            cursor: default;
+
+        } */
     }
 }

@@ -62,14 +62,15 @@ function setMove(direction) {
 
 
 
-function setNewLine(color, canvasWidth, canvasHeight) {
+function setNewLine(color, canvasWidth, canvasHeight, font) {
     const newLine = {
         txt: 'This is your new line',
         size: 20,
         color: color,
         pos: { x: canvasWidth / 2, y: canvasHeight / 2 },
         width: 0,
-        isDrag: false
+        isDrag: false,
+        font: font
     }
     gMeme.lines.push(newLine)
     gMeme.selectedLineIdx = gMeme.lines.length - 1
@@ -125,4 +126,8 @@ function moveLine(dx, dy) {
     const line = gMeme.lines[gMeme.selectedLineIdx]
     line.pos.x += dx
     line.pos.y += dy
+}
+
+function setFont(font){
+    gMeme.lines[gMeme.selectedLineIdx].font = font
 }

@@ -17,10 +17,10 @@
             <div class="logo">Meme <span class="logo-span">Generator</span></div>
             <nav class="main-nav">
                 <ul class="clean-list flex">
-                    <li><a href="#" onclick="showGallery()"> Gallery</a></li>
-                    <li><a href="#" onclick="showEditor()">Editor</a></li>
-                    <li><a href="#">Memes</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a class="flex active" href="#" onclick="showGallery()"> Gallery</a></li>
+                    <li><a class="flex" href="#" onclick="showEditor()">Editor</a></li>
+                    <li><a class="flex" href="#">Memes</a></li>
+                    <li><a class="flex" href="#">About</a></li>
                 </ul>
             </nav>
             <button onclick="toggleMenu()" class="btn-toggle-menu fa menu"></button>
@@ -66,7 +66,14 @@
                 <a class="fa right" href="#" onclick="onSetMove('right')"></a>
             </div>
             <div class="align-inputs">
-                <a class="fa font" href="#" onclick=""></a>
+                <select class="input-font" onchange="onSetFont(this.value)">
+                    <option value='inconsolata'>inconsolata</option>
+                    <option value='montserrat'>montserrat</option>
+                    <option value='playfair'>playfair</option>
+                    <option value='roboto'>roboto</option>
+                    <option value='sono'>sono</option>
+                    <option value='spectral'>spectral</option>
+                </select>
                 <a class="fa alignLeft" href="#" onclick="onSetTextAlign('left')"></a>
                 <a class="fa alignCenter" href="#" onclick="onSetTextAlign('center')"></a>
                 <a class="fa alignRight" href="#" onclick="onSetTextAlign('right')"></a>

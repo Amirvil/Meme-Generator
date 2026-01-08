@@ -1,6 +1,6 @@
 'use strict'
 
-function onInitGallery(){
+function onInitGallery() {
     renderGallery()
 }
 
@@ -12,15 +12,14 @@ function renderGallery() {
     elGallery.innerHTML = strHtml.join('')
 }
 
-function onImgSelect(imgId){
+function onImgSelect(imgId) {
     setImg(imgId)
     showEditor()
 }
 
-function showEditor(){
+function showEditor() {
     const elGallery = document.querySelector('.gallery-container')
     const elEditor = document.querySelector('.editor-container')
-
     elGallery.classList.add('hidden')
     elEditor.classList.remove('hidden')
 

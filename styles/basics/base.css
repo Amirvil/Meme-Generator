@@ -3,7 +3,7 @@
 }
 
 html {
-    font-family: instrument;
+    font-family: open-sans;
     color: black;
 }
 
@@ -30,7 +30,6 @@ canvas {
 
 a {
     text-decoration: none;
-    font-size: 1.2rem;
 }
 
 .input-txt {

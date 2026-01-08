@@ -1,13 +1,13 @@
 /* Logo */
 
 .logo {
-    font-family: young;
-    font-size: 2em;
+    font-family: bubble;
+    font-size: 2.2em;
     color: var(--clr-primary-2);
 
     >*{
         &.logo-span{
-            color: var(--clr-primary-3);
+            color: var(--clr-primary-4);
         }
     }
 }

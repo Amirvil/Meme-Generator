@@ -16,7 +16,7 @@ function onClearCanvas() {
     gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
 }
 
-function renderMeme() {
+async function renderMeme() {
     onClearCanvas()
     const meme = getMeme()
     const imgUrl = getImgUrlByID(meme.selectedImgId)
@@ -25,18 +25,21 @@ function renderMeme() {
     resizeCanvas(elImg.height, elImg.width)
 
     elImg.onload = () => {
-        gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
-        meme.lines.forEach((line, idx) => {
-            const { txt, size, color, pos } = line
-            gCtx.font = `${size}px Impact`
-            line.width = gCtx.measureText(txt).width
+        document.fonts.ready.then(() => {
+            gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
+            meme.lines.forEach((line, idx) => {
+                const { txt, size, color, pos, font } = line
+                gCtx.font = `${size}px ${font}`
+                line.width = gCtx.measureText(txt).width
 
-            drawTxt(txt, size, color, pos.x, pos.y)
+                drawTxt(txt, size, color, pos.x, pos.y, font)
 
-            if (idx === meme.selectedLineIdx) {
-                drawTxtFrame(txt, size, pos.x, pos.y)
-            }
+                if (idx === meme.selectedLineIdx) {
+                    drawTxtFrame(txt, size, pos.x, pos.y, font)
+                }
+            })
         })
+
     }
 }
 
@@ -58,12 +61,12 @@ function renderInputs() {
     }
 }
 
-function drawTxt(txt, size, color, x, y) {
+function drawTxt(txt, size, color, x, y, font) {
     gCtx.lineWidth = 1
     gCtx.strokeStyle = 'black'
     gCtx.fillStyle = color
     gCtx.textAlign = 'center'
-    gCtx.font = `${size}px Impact`
+    gCtx.font = `${size}px ${font}`
 
     gCtx.fillText(txt, x, y)
     gCtx.strokeText(txt, x, y)
@@ -112,7 +115,8 @@ function onSetTextAlign(align) {
 
 function onAddLine() {
     const elClrInput = document.querySelector('.input-clr')
-    setNewLine(elClrInput.value, gElCanvas.width, gElCanvas.height)
+    const elFontInput = document.querySelector('.input-font')
+    setNewLine(elClrInput.value, gElCanvas.width, gElCanvas.height, elFontInput.value)
     renderInputs()
     renderMeme()
 }
@@ -130,8 +134,8 @@ function onDeleteLine() {
     renderMeme()
 }
 
-function drawTxtFrame(txt, size, x, y) {
-    gCtx.font = `${size}px Impact`
+function drawTxtFrame(txt, size, x, y, font) {
+    gCtx.font = `${size}px ${font}`
     const textWidth = gCtx.measureText(txt).width
 
     const padding = 10
@@ -149,10 +153,8 @@ function drawTxtFrame(txt, size, x, y) {
 function showGallery() {
     const elGallery = document.querySelector('.gallery-container')
     const elEditor = document.querySelector('.editor-container')
-
     elGallery.classList.remove('hidden')
     elEditor.classList.add('hidden')
-
 }
 
 function addListeners() {
@@ -162,9 +164,9 @@ function addListeners() {
     gElCanvas.addEventListener('mouseup', onUp)
 
     // Touch Events
-	gElCanvas.addEventListener('touchstart', onDown)
-	gElCanvas.addEventListener('touchmove', onMove)
-	gElCanvas.addEventListener('touchend', onUp)
+    gElCanvas.addEventListener('touchstart', onDown)
+    gElCanvas.addEventListener('touchmove', onMove)
+    gElCanvas.addEventListener('touchend', onUp)
 }
 
 function getEvPos(ev) {
@@ -210,6 +212,11 @@ function onUp() {
 
 function toggleMenu() {
     document.body.classList.toggle('menu-open')
+}
+
+function onSetFont(font) {
+    setFont(font)
+    renderMeme()
 }
 
 

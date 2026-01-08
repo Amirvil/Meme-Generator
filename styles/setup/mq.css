@@ -43,21 +43,29 @@
 
 /* SMALL 600px */
 @media (min-width: 660px) {
-    .main-layout{
+    .main-layout {
         grid-template-columns: minmax(16px, 1fr) minmax(auto, var(--s)) minmax(16px, 1fr);
+    }
+
+    .logo{
+        font-size: 2.5em;
     }
 }
 
 /* MEDIUM 880px */
 @media (min-width: 940px) {
-    .main-layout{
+    .main-layout {
         grid-template-columns: minmax(16px, 1fr) minmax(auto, var(--m)) minmax(16px, 1fr);
     }
 
     .main-nav {
 
         >ul {
-            gap: 100px;
+            gap: 60px;
+        }
+
+        a {
+            font-size: 1em;
         }
     }
 
@@ -65,11 +73,28 @@
         display: none;
     }
 
+
+
 }
 
 /* LARGE 1060px */
 @media (min-width: 1120px) {
-    .main-layout{
+    .main-layout {
         grid-template-columns: minmax(16px, 1fr) minmax(auto, var(--l)) minmax(16px, 1fr);
+    }
+
+    .main-nav {
+
+        >ul {
+            gap: 100px;
+        }
+
+        a {
+            font-size: 1.1em;
+        }
+    }
+
+    .logo{
+        font-size: 3.5em;
     }
 }

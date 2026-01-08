@@ -1,19 +1,58 @@
 /* Typography */
 
-/* Ultra */
 @font-face {
-    font-family: young;
-    /* set name */
-    src: url(/fonts/young-serif/YoungSerif-Regular.ttf);
-    /* url of the font */
+    font-family: inconsolata;
+    src: url(/fonts/inconsolata/Inconsolata-Regular.ttf);
 }
 
-/* Slabo */
+@font-face {
+    font-family: bubble;
+    src: url(/fonts/bubble/BubblegumSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: open-sans;
+    src: url(/fonts/open-sans/OpenSans-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: lato;
+    src: url(/fonts/lato/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: montserrat;
+    src: url(/fonts/montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: playfair;
+    src: url(/fonts/playfair/PlayfairDisplay-Regular.ttf);
+}
+
+@font-face {
+    font-family: roboto;
+    src: url(/fonts/roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: sono;
+    src: url(/fonts/sono/Sono-Regular.ttf);
+}
+
+@font-face {
+    font-family: spectral;
+    src: url(/fonts/spectral/Spectral-Regular.ttf);
+}
+
+@font-face {
+    font-family: young;
+    src: url(/fonts/young-serif/YoungSerif-Regular.ttf);
+}
+
 @font-face {
     font-family: instrument;
-    /* set name */
     src: url(/fonts/instrument-sans/InstrumentSans-VariableFont_wdth\,wght.ttf)
-        /* url of the font */
 }
 
 /* Font Awesome */
@@ -121,4 +160,5 @@
 
 .fa.menu::before {
     content: "\f0c9";
+    font-size: 1.5rem;
 }
