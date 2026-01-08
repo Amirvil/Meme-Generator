@@ -5,12 +5,15 @@ var gCtx
 var gStartPos
 
 function onInitEditor() {
-    gElCanvas = document.querySelector('canvas')
-    gCtx = gElCanvas.getContext('2d')
-    addListeners()
-    initButtons()
-    renderInputs()
-    renderMeme()
+    document.fonts.ready.then(() => {
+        gElCanvas = document.querySelector('canvas')
+        gCtx = gElCanvas.getContext('2d')
+        addListeners()
+        initButtons()
+        renderInputs()
+        renderMeme()
+    })
+
 }
 
 function initButtons() {
@@ -246,8 +249,8 @@ function onUpdateNav(pageName) {
     })
 }
 
-function closeMenuMobile(){
-    if (window.innerWidth <= 660){
+function closeMenuMobile() {
+    if (window.innerWidth <= 660) {
         document.body.classList.remove('menu-open')
     }
 }
