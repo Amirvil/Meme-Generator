@@ -12,31 +12,31 @@
 
 @font-face {
     font-family: inconsolata;
-    src: url(../fonts/inconsolata/Inconsolata-Regular.ttf);
+    src: url(../../fonts/inconsolata/Inconsolata-Regular.ttf);
 }
 
 
 @font-face {
     font-family: montserrat;
-    src: url(../fonts/montserrat/Montserrat-Regular.ttf);
+    src: url(../../fonts/montserrat/Montserrat-Regular.ttf);
 }
 
 @font-face {
     font-family: playfair;
-    src: url(../fonts/playfair/PlayfairDisplay-Regular.ttf);
+    src: url(../../fonts/playfair/PlayfairDisplay-Regular.ttf);
 }
 
 @font-face {
     font-family: roboto;
-    src: url(../fonts/roboto/Roboto-Regular.ttf);
+    src: url(../../fonts/roboto/Roboto-Regular.ttf);
 }
 
 @font-face {
     font-family: sono;
-    src: url(../fonts/sono/Sono-Regular.ttf);
+    src: url(../../fonts/sono/Sono-Regular.ttf);
 }
 
 @font-face {
     font-family: spectral;
-    src: url(../fonts/spectral/Spectral-Regular.ttf);
+    src: url(../../fonts/spectral/Spectral-Regular.ttf);
 }
