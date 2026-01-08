@@ -2,12 +2,12 @@
 
 @font-face {
     font-family: bubble;
-    src: url(../fonts/bubble/BubblegumSans-Regular.ttf);
+    src: url(../fonts/bubble/BubblegumSans-Regular.ttf) format('truetype');
 }
 
 @font-face {
     font-family: open-sans;
-    src: url(../fonts/open-sans/OpenSans-SemiBold.ttf);
+    src: url(../fonts/open-sans/OpenSans-SemiBold.ttf) format('truetype');
 }
 
 @font-face {
