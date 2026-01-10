@@ -159,7 +159,6 @@ function onNavigate(pageId) {
     if (elTargetPage) elTargetPage.classList.remove('hidden')
 
     if (pageId === 'editor') onInitEditor()
-    if (pageId === 'gallery') onInitGallery()
 
     onUpdateNav(pageId)
     closeMenuMobile()
