@@ -151,13 +151,31 @@ function drawTxtFrame(txt, size, x, y, font) {
     gCtx.fillRect(rectX, rectY, width, height)
 }
 
-function showGallery() {
-    onUpdateNav('gallery')
+function onNavigate(pageId) {
+    const elSections = document.querySelectorAll('section')
+    elSections.forEach(section => section.classList.add('hidden'))
+
+    const elTargetPage = document.getElementById(pageId)
+    if (elTargetPage) elTargetPage.classList.remove('hidden')
+
+    if (pageId === 'editor') onInitEditor()
+    if (pageId === 'gallery') onInitGallery()
+
+    onUpdateNav(pageId)
     closeMenuMobile()
-    const elGallery = document.querySelector('.gallery-container')
-    const elEditor = document.querySelector('.editor-container')
-    elGallery.classList.remove('hidden')
-    elEditor.classList.add('hidden')
+}
+
+function onUpdateNav(pageId) {
+
+    const elNavLinks = document.querySelectorAll('.main-nav a')
+
+    elNavLinks.forEach(elLink => {
+        if (elLink.innerText.toLowerCase() === pageId) {
+            elLink.classList.add('active')
+        } else {
+            elLink.classList.remove('active')
+        }
+    })
 }
 
 function addListeners() {
@@ -234,19 +252,24 @@ function onShare(ev) {
     uploadImg(canvasData, onSuccess)
 }
 
-function onUpdateNav(pageName) {
-    const elLinks = document.querySelectorAll('.main-nav a')
-    elLinks.forEach(elLink => {
-        const isMatch = elLink.innerText.toLowerCase() === pageName.toLowerCase()
-        elLink.classList.toggle('active', isMatch)
-    })
-}
-
 function closeMenuMobile() {
     if (window.innerWidth <= 660) {
         document.body.classList.remove('menu-open')
     }
 }
 
+function onSave() {
+    saveToStorage('canvas', gMeme)
+}
 
+function onLoad() {
+    gLine = loadFromStorage('canvas')
+
+    gCtx.moveTo(gLine[0].x, gLine[0].y)
+    gCtx.beginPath()
+
+    gLine.forEach(pos => gCtx.lineTo(pos.x, pos.y))
+
+    gCtx.stroke()
+}
 

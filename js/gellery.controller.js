@@ -14,16 +14,5 @@ function renderGallery() {
 
 function onImgSelect(imgId) {
     setImg(imgId)
-    showEditor()
-}
-
-function showEditor() {
-    onUpdateNav('editor')
-    closeMenuMobile()
-    const elGallery = document.querySelector('.gallery-container')
-    const elEditor = document.querySelector('.editor-container')
-    elGallery.classList.add('hidden')
-    elEditor.classList.remove('hidden')
-
-    onInitEditor()
+    onNavigate('editor')
 }

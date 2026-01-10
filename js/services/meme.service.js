@@ -63,7 +63,6 @@ function setMove(direction) {
 
 
 function setNewLine(color, canvasWidth, canvasHeight, font) {
-    debugger
     const newLine = {
         txt: 'This is your new line',
         size: 20,

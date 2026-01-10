@@ -17,8 +17,8 @@
             <div class="logo">Meme <span class="logo-span">Generator</span></div>
             <nav class="main-nav">
                 <ul class="clean-list flex">
-                    <li><a class="flex active" href="#" onclick="showGallery(this)">Gallery</a></li>
-                    <li><a class="flex" href="#" onclick="showEditor(this)">Editor</a></li>
+                    <li><a class="flex active" href="#" onclick="onNavigate('gallery')">Gallery</a></li>
+                    <li><a class="flex" href="#" onclick="onNavigate('editor')">Editor</a></li>
                     <li><a class="flex" href="#">Memes</a></li>
                     <li><a class="flex" href="#">About</a></li>
                 </ul>
@@ -27,8 +27,7 @@
         </div>
 
     </header>
-
-    <section class="gallery-container gallery-layout">
+    <section class="gallery-container gallery-layout" id="gallery">
         <div class="search-bar">
             <!-- <input class="input-search input-txt" type="text">
             <button class="btn-search button-1">Search</button> -->
@@ -38,7 +37,7 @@
         </div>
     </section>
 
-    <section class="editor-container editor-layout hidden">
+    <section class="editor-container editor-layout hidden" id="editor">
         <div class="canvas-container flex justify-center align-center">
             <canvas width="450" height="450"></canvas>
         </div>
@@ -91,7 +90,6 @@
 
         </div>
     </section>
-
     <footer class="main-footer full flex align-center ">
         <small>@ allrights 2025</small>
     </footer>
@@ -100,6 +98,9 @@
     <script src="js/services/meme.service.js"></script>
     <script src="js/gellery.controller.js"></script>
     <script src="js/services/gallery.service.js"></script>
+    <script src="js/pic.controller.js"></script>
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/pics.service.js"></script>
 </body>
 
 </html>
