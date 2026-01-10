@@ -26,11 +26,11 @@ function setLineColor(color) {
 function setFontSize(direction) {
     switch (direction) {
         case 'increase':
-            gMeme.lines[gMeme.selectedLineIdx].size += 1
+            gMeme.lines[gMeme.selectedLineIdx].size += 2
             break;
 
         case 'decrease':
-            gMeme.lines[gMeme.selectedLineIdx].size -= 1
+            gMeme.lines[gMeme.selectedLineIdx].size -= 2
             break;
     }
 }
@@ -63,6 +63,7 @@ function setMove(direction) {
 
 
 function setNewLine(color, canvasWidth, canvasHeight, font) {
+    debugger
     const newLine = {
         txt: 'This is your new line',
         size: 20,

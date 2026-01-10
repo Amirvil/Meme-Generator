@@ -5,15 +5,12 @@ var gCtx
 var gStartPos
 
 function onInitEditor() {
-    document.fonts.ready.then(() => {
-        gElCanvas = document.querySelector('canvas')
-        gCtx = gElCanvas.getContext('2d')
-        addListeners()
-        initButtons()
-        renderInputs()
-        renderMeme()
-    })
-
+    gElCanvas = document.querySelector('canvas')
+    gCtx = gElCanvas.getContext('2d')
+    addListeners()
+    initButtons()
+    renderInputs()
+    renderMeme()
 }
 
 function initButtons() {
@@ -25,7 +22,6 @@ function initButtons() {
         button.style.backgroundPosition = "center";
         button.style.backgroundSize = "70%";
     })
-
 }
 
 function onClearCanvas() {
@@ -41,10 +37,10 @@ function renderMeme() {
     resizeCanvas(elImg.height, elImg.width)
 
     elImg.onload = () => {
-        document.fonts.ready.then(() => {
-            gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
-            meme.lines.forEach((line, idx) => {
-                const { txt, size, color, pos, font } = line
+        gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
+        meme.lines.forEach((line, idx) => {
+            const { txt, size, color, pos, font } = line
+            document.fonts.load(`${size}px ${font}`).then(() => {
                 gCtx.font = `${size}px ${font}`
                 line.width = gCtx.measureText(txt).width
 
@@ -54,8 +50,8 @@ function renderMeme() {
                     drawTxtFrame(txt, size, pos.x, pos.y, font)
                 }
             })
-        })
 
+        })
     }
 }
 

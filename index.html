@@ -39,7 +39,7 @@
     </section>
 
     <section class="editor-container editor-layout hidden">
-        <div class="canvas-container">
+        <div class="canvas-container flex justify-center align-center">
             <canvas width="450" height="450"></canvas>
         </div>
 
@@ -48,7 +48,7 @@
             <input class="input-line input-txt" type="text" oninput="onTxtChange(this.value)" />
 
             <select class="select-font" onchange="onSetFont(this.value)">
-                <option value='inconsolata'>inconsolata</option>
+                <option value='inconsolata' selected>inconsolata</option>
                 <option value='montserrat'>montserrat</option>
                 <option value='playfair'>playfair</option>
                 <option value='roboto'>roboto</option>

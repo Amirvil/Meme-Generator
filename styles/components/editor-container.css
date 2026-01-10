@@ -3,12 +3,6 @@
 .editor-container {
     >* {
 
-        &.canvas-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
         &.inputs-container {
 
             display: grid;
