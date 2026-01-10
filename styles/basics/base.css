@@ -54,10 +54,10 @@ a {
 
 button {
     padding: 24px 24px;
-    margin-top: 10px;
 
     background-color: #BB86FC;
     color: #000;
+    font-family: open-sans;
     font-weight: bold;
     font-size: 20px;
     border: none;
@@ -65,30 +65,55 @@ button {
 
     cursor: pointer;
     transition: background-color 0.2s, transform 0.1s;
-}
 
-button:hover {
-    background-color: #d1b1ff;
-    transform: translateY(-2px);
-}
-
-button:active {
-    transform: translateY(0);
+    &:hover {
+        background-color: #d1b1ff;
+        transform: translateY(-2px);
+    }
 }
 
 .btn2 {
-    padding: 14px 14px;
+    padding: 10.3px 14.1px;
 }
 
-.btn-clr {
-    background-image: url('/images/buttons/btn-color.svg');
+.lbl-clr {
+    position: relative;
+    background-color: #BB86FC;
+    cursor: pointer;
+    overflow: hidden;
+
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+
+    &:hover {
+        background-color: #d1b1ff;
+        transform: translateY(-2px);
+    }
 }
 
-.clr-label {
-    color: #BB86FC;
+.icon-clr {
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
-.btn-toggle-menu{
+.input-clr {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.btn-toggle-menu {
     padding: 5px 10px;
 
 }

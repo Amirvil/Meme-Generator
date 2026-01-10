@@ -90,9 +90,6 @@ function onTxtChange(txt) {
 }
 
 function onColorChange(color) {
-    const elClrInput = document.querySelector('.input-clr')
-    console.log(elClrInput)
-    elClrInput.style.setProperty('color', color, 'imprtant')
     setLineColor(color)
     renderMeme()
 }

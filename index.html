@@ -60,7 +60,12 @@
                 <button class="btn-add-line" onclick="onAddLine()"></button>
                 <button class="btn-del-line" onclick="onDeleteLine()"></button>
                 <button class="btn-switch-line" onclick="onSwitchLine()"></button>
-                <input class="input-clr" id="input-clr" type="color" onchange="onColorChange(this.value)">
+                <label class="lbl-clr">
+                    <span class="icon-clr">
+                        <img src="/images/buttons/btn-color.svg">
+                    </span>
+                    <input class="input-clr" id="input-clr" type="color" oninput="onColorChange(this.value)">
+                </label>
             </div>
 
             <div class="btn-font-container">
